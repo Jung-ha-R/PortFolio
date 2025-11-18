@@ -1,63 +1,111 @@
 .app {
   min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+  background: #ffffff;
+  color: #222222;
 }
 
 .header {
   position: sticky;
   top: 0;
-  z-index: 1;
-  backdrop-filter: blur(10px);
-  background: rgba(15, 23. 42, 0.7);
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 40px;
+  padding: 18px 48px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  font-size: 16px;
 }
 
 .nav a {
   text-decoration: none;
-  color: #e5e7eb;
-  opacity: 0.8;
+  color: #222222;
+  padding: 6px 18px;
+  border-radius: 999px;
 }
 
 .nav a:hover {
-  opacity: 1;
-  border-bottom: 2px solid #0000ed;
+  background: #333333;
+  color: #ffffff;
 }
+
 
 .section {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 80px 24px;
 }
 
-.home h2 {
-  font-size: 40px;
-  margin-bottom: 12px;
+.home {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  padding: 40px 24px 80px;
+  max-width: 1400px;
 }
 
-.home p {
-  font-size: 18px;
-  opacity: 0.9;
+.home-image {
+  min-height: 520px;
+  background-image: url('https://images.pexels.com/photos/109919/pexels-photo-109919.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
 }
 
-.home button {
-  margin-top: 24px;
-  padding: 10px 20px;
+.home-content {
+  background: #f4f8fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-inner {
+  max-width: 420px;
+}
+
+.home-title {
+  font-size: 52px;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  margin: 0 0 24px;
+}
+
+.home-line {
+  width: 80px;
+  height: 4px;
+  background: #333333;
+  margin-bottom: 24px;
+}
+
+.home-sub {
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
+.home-button {
+  padding: 12px 36px;
   border-radius: 999px;
   border: none;
-  background: #0000ed;
-  color: #e5e7eb;
+  background: #333333;
+  color: #ffffff;
   font-weight: 600;
   cursor: pointer;
+}
+
+.home-button:hover {
+  background: #000000;
 }
 
 .chips {
@@ -71,7 +119,7 @@
 .chips li {
   padding: 6px 12px;
   border-radius: 999px;
-  background: #0f172a;
+  background: #f2f2f2;
   font-size: 13px;
 }
 
@@ -84,8 +132,8 @@
 .projects-card {
   padding: 20px;
   border-radius: 12px;
-  background: #020617;
-  border: 1px solid #1f2937;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
 }
 
 .footer {
@@ -95,16 +143,31 @@
   opacity: 0.6;
 }
 
+@media (max-width: 960px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+
+  .home-image {
+    min-height: 260px;
+  }
+
+  .home-title {
+    font-size: 36px;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
-    padding: 12px 16px;
+    padding: 12px 20px;
+  }
+
+  .nav {
+    gap: 16px;
+    font-size: 14px;
   }
 
   .section {
     padding: 60px 16px;
-  }
-
-  .home h2 {
-    font-size: 28px;
   }
 }
