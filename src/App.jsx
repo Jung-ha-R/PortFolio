@@ -1,66 +1,55 @@
-import React from 'react';
-import './App.css';
+// App.jsx
+import { Routes, Route, NavLink } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Project from "./pages/Project";
+import Board from "./pages/Contact";
+import "./App.css";
+
+const MENU = [
+  { path: "/", label: "Home" },
+  { path: "/About", label: "About" },
+  { path: "/Project", label: "Project" },
+  { path: "/contact", label: "Contact" },
+];
 
 function App() {
   return (
-    <div className="app">
+    <>
       <header className="header">
-        <div className="logo">JH&apos;s</div>
-        <nav className="nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#project">Project</a>
-          <a href="#skills">Skills</a>
+        <nav className="top-nav">
+          <div className="logo">
+            <NavLink to="/">HR&apos;s</NavLink>
+          </div>
+
+          <div className="menu">
+            <ul>
+              {MENU.map((item) => (
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                    end={item.path === "/"}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
       </header>
 
-      <main>
-        <section id="home" className="section home">
-          <div className="home-image" />
-          <div className="home-content">
-            <div className="home-inner">
-              <h2 className="home-title">JUNG HA</h2>
-              <div className="home-line" />
-              <p className="home-sub">Creative Developer</p>
-              <button
-                className="home-button"
-                onClick={() => {
-                  document
-                    .querySelector('#project')
-                    ?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Project
-              </button>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="section">
-          <h3>About</h3>
-          <p>자기소개 영역</p>
-        </section>
-
-        <section id="project" className="section">
-          <h3>Project</h3>
-          <div className="projects-grid">
-            <article className="projects-card">
-              <h4>프로젝트 1</h4>
-              <p>프로젝트 설명</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="skills" className="section">
-          <h3>Skills</h3>
-          <p>기술</p>
-        </section>
+      {/* 페이지 영역 */}
+      <main className="page">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Project" element={<Project />} />
+          <Route path="/contact" element={<Board />} />
+        </Routes>
       </main>
-
-      <footer className="footer">
-        © {new Date().getFullYear()} JUNG HA. All rights reserved.
-      </footer>
-    </div>
+    </>
   );
 }
 
