@@ -30,8 +30,8 @@ function Project() {
             <div className="cards">
               <div className="card">
                 <div className="thumb" />
-                <h3 className="card-title">넷플릭스 클론 코딩</h3>
-                <p className="card-desc">TMDB API를 사용한 영화/시리즈 소개 페이지</p>
+                <h3 className="card-title">웹페이지</h3>
+                <p className="card-desc">CMS를 활용한 협업</p>
               </div>
 
               <div className="card">
