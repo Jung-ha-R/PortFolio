@@ -8,7 +8,7 @@
 
 .top-nav {
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 0 0 auto;
   padding: 18px 48px;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 0 0 auto;
   min-height: calc(100vh - 80px);
 }
 
