@@ -85,7 +85,6 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
   left: 0;
   top: 0;
   white-space: nowrap;
-  line-height: 1.2;
   opacity: ${e=>e.$active?1:0};
   transform: translateY(${e=>e.$active?`0%`:`100%`});
   transition: opacity 0.4s ease, transform 0.4s ease;
