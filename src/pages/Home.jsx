@@ -183,7 +183,6 @@ const Word = styled.div`
   left: 0;
   top: 0;
   white-space: nowrap;
-  line-height: 1.2;
   opacity: ${(props) => (props.$active ? 1 : 0)};
   transform: translateY(${(props) => (props.$active ? "0%" : "100%")});
   transition: opacity 0.4s ease, transform 0.4s ease;
