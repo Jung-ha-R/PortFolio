@@ -174,7 +174,7 @@ const HeroTitle = styled.h3`
 const TextAniBox = styled.div`
   position: relative;
   overflow: hidden;
-  height: 1.4em;
+  height: 1.2em;
   min-width: 130px;
 `;
 
