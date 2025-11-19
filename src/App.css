@@ -52,12 +52,16 @@
 .home {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  padding: 40px 24px 80px;
   max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 80px);
 }
 
 .home-image {
-  min-height: 520px;
+  /* min-height: 520px;  <- 이 줄은 삭제하거나 주석 처리 */
+  height: 100%;
   background-image: url('https://images.pexels.com/photos/109919/pexels-photo-109919.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-position: center;
@@ -69,6 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .home-inner {
@@ -107,7 +112,6 @@
 .home-button:hover {
   background: #000000;
 }
-
 .chips {
   display: flex;
   flex-wrap: wrap;
