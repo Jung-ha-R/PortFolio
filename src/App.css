@@ -68,8 +68,8 @@
 .layout-right {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 3fr) 180px;
-  padding: 40px 40px 80px;
+  grid-template-columns: minmax(0, 3fr) auto;
+  padding: 40px 8px 80px 40px;
   box-sizing: border-box;
 }
 
@@ -97,6 +97,7 @@
 .side-menu {
   display: flex;
   align-items: flex-start;
+  justify-self: flex-end;
 }
 
 .side-line {
