@@ -21,7 +21,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
   min-height: calc(100vh - 80px);
-  max-width: 1280px;
+  max-width: 1980px;
   width: 100%;
   margin: 0;
 
