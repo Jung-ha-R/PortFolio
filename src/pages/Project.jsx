@@ -27,6 +27,12 @@ function Project() {
               <button>All</button>
             </div>
 
+            <div className="card">
+              <div className="thumb" />
+              <h3 className="card-title">Todo List</h3>
+              <p className="card-desc">기본 CRUD + 로컬스토리지 저장 기능</p>
+            </div>
+
             <div className="cards">
               <div className="card">
                 <div className="thumb" />
@@ -38,12 +44,6 @@ function Project() {
                 <div className="thumb" />
                 <h3 className="card-title">포트폴리오 사이트</h3>
                 <p className="card-desc">React + GitHub Pages로 배포한 개인 포트폴리오</p>
-              </div>
-
-              <div className="card">
-                <div className="thumb" />
-                <h3 className="card-title">Todo List</h3>
-                <p className="card-desc">기본 CRUD + 로컬스토리지 저장 기능</p>
               </div>
             </div>
           </ProjectSection>
