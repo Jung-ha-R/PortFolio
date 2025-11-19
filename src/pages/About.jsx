@@ -12,7 +12,7 @@ export default function About() {
     <div className="page">
       <main className="layout">
         <section className="layout-left">
-          <img src="/img/jh.png" alt="profile" />
+          <img src="https://images.unsplash.com/photo-1763315152539-06fc234b526c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile" />
         </section>
 
         <section className="layout-right">
