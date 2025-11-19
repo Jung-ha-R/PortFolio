@@ -78,7 +78,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
 `,Aa=L.div`
   position: relative;
   overflow: hidden;
-  height: 1.4em;
+  height: 1.2em;
   min-width: 130px;
 `,ja=L.div`
   position: absolute;
