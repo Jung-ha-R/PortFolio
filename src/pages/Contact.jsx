@@ -64,7 +64,6 @@ function Contact() {
             </ContactBox>
           </ContactSection>
 
-          {/* 오른쪽 세로 메뉴 – About / Project와 동일 구조 */}
           <aside className="side-menu">
             <div className="side-line" />
             <div className="side-links">

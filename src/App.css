@@ -8,7 +8,7 @@
 
 .top-nav {
   max-width: 1440px;
-  margin: 0 0 0 auto;
+  margin: 0 auto;
   padding: 18px 48px;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
 .page {
   background: #f4f8fd;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .layout {
@@ -147,7 +147,7 @@
   color: inherit;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .page {
     justify-content: center;
   }
