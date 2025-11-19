@@ -24,7 +24,7 @@ function Home() {
   return (
     <Main>
       <Left>
-        <img src="/img/jh.png" alt="home" />
+        <img src="./img/jh.png" alt="home" />
       </Left>
 
       <Right>
@@ -91,6 +91,9 @@ const Main = styled.main`
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
   min-height: calc(100vh - 80px); 
   background: #f4f8fd;
+
+  max-width: 1280px;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;

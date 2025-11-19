@@ -12,7 +12,7 @@ function Contact() {
   return (
     <Main>
       <Left>
-        <img src="/img/jh.png" alt="contact" />
+        <img src="./img/jh.png" alt="contact" />
       </Left>
 
       <Right>
@@ -26,9 +26,9 @@ function Contact() {
               </ContactHeader>
 
               <ProfileRow>
-                <Avatar>JH</Avatar>
+                <Avatar>HR</Avatar>
                 <div>
-                  <ProfileName>정하</ProfileName>
+                  <ProfileName>정하림</ProfileName>
                   <ProfileDesc>프론트엔드 지망 개발자</ProfileDesc>
                 </div>
               </ProfileRow>
@@ -103,6 +103,9 @@ const Main = styled.main`
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
   min-height: calc(100vh - 80px);
   background: #f4f8fd;
+
+  max-width: 1280px;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
