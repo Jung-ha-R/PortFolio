@@ -78,13 +78,14 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
 `,Aa=L.div`
   position: relative;
   overflow: hidden;
-  height: 1.2em;
-  min-width: 110px;
+  height: 1.4em;
+  min-width: 130px;
 `,ja=L.div`
   position: absolute;
   left: 0;
   top: 0;
   white-space: nowrap;
+  line-height: 1.2;
   opacity: ${e=>e.$active?1:0};
   transform: translateY(${e=>e.$active?`0%`:`100%`});
   transition: opacity 0.4s ease, transform 0.4s ease;
