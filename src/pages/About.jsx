@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 
 const MENU = [
   { path: "/", label: "Home" },
@@ -10,244 +9,66 @@ const MENU = [
 
 export default function About() {
   return (
-    <div className="layout">
-      <div className="layout-left">
-        <img src="./img/jh.png" alt="img" />
-      </div>
-
-      <div className="layout-right">
-        <section className="about-content">
-          <h2 className="section-title">ABOUT ME</h2>
-          <p className="section-text">
-            프엔 개발자 지망생 정하림입니다.
-          </p>
-
-          <h3 className="sub-title">- EDUCATION</h3>
-          <ul className="list">
-            <li></li>
-          </ul>
-
-          <h3 className="sub-title">- CERTIFICATE</h3>
-          <ul className="list">
-            <li></li>
-          </ul>
+    <div className="page">
+      <main className="layout">
+        <section className="layout-left">
+          <img src="/img/jh.png" alt="profile" />
         </section>
 
-        <aside className="side-menu">
-          <div className="side-line" />
-          <div className="side-links">
-            <ul className="menuList">
-              {MENU.map((item) => (
-                <li key={item.path}>
-                  <NavLink
-                    to={item.path}
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                    end={item.path === "/"}
-                  >
-                    {item.label}
-                  </NavLink>
-                </li>
-              ))}
+        <section className="layout-right">
+          <section className="about-content">
+            <h2 className="section-title">ABOUT ME</h2>
+            <p className="section-text">
+              프론트엔드 개발자를 지망하고 있는 정하림입니다.  
+              사용자 경험과 깔끔한 인터페이스를 좋아하고,  
+              React와 웹 퍼블리싱을 중심으로 공부하고 있습니다.
+            </p>
+
+            <h3 className="sub-title">- EDUCATION</h3>
+            <ul className="list">
+              <li>2016 ~ 2017 정화예술대학교 재학</li>
+              <li>2025 ~ 프론트엔드 개인 프로젝트 진행 중</li>
             </ul>
 
-            <div className="etc">
-              <div className="githublogo">
-                <a href="https://github.com/Jung-ha-R" target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
+            <h3 className="sub-title">- CERTIFICATE</h3>
+            <ul className="list">
+              <li>추가 예정</li>
+            </ul>
+          </section>
+
+          <aside className="side-menu">
+            <div className="side-line" />
+            <div className="side-links">
+              <ul className="menuList">
+                {MENU.map((item) => (
+                  <li key={item.path}>
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                      end={item.path === "/"}
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="etc">
+                <div className="githublogo">
+                  <a
+                    href="https://github.com/Jung-ha-R"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <div className="copyright">Copyright © 2025</div>
               </div>
-              <div className="copyright">Copyright © 2025</div>
             </div>
-          </div>
-        </aside>
-      </div>
+          </aside>
+        </section>
+      </main>
     </div>
   );
 }
-
-const Main = styled.main`
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
-  min-height: calc(100vh - 80px); 
-  background: #f4f8fd;
-
-  max-width: 1280px;
-  margin: 0 auto;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-`;
-
-const Left = styled.div`
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-  }
-
-  @media (max-width: 1024px) {
-    img {
-      height: 280px;
-    }
-  }
-`;
-
-const Right = styled.div`
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) 200px;
-  padding: 40px 40px 80px;
-  box-sizing: border-box;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    padding: 24px 20px 40px;
-    row-gap: 24px;
-  }
-`;
-
-const HeroSection = styled.section`
-  display: flex;
-  align-items: center;
-`;
-
-const HeroInner = styled.div`
-  max-width: 420px;
-`;
-
-const Name = styled.h3`
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0 0 16px;
-`;
-
-const Line = styled.span`
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: #222;
-  margin-bottom: 20px;
-`;
-
-const HeroTitle = styled.h3`
-  margin: 0 0 32px;
-  font-size: 24px;
-  font-weight: 600;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-`;
-
-const TextAniBox = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: 1.2em;
-  min-width: 110px; 
-`;
-
-const Word = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  white-space: nowrap;
-  opacity: ${(props) => (props.$active ? 1 : 0)};
-  transform: translateY(${(props) => (props.$active ? "0%" : "100%")});
-  transition: opacity 0.4s ease, transform 0.4s ease;
-`;
-
-const HeroButtonWrap = styled.div`
-  margin-top: 8px;
-`;
-
-const HeroButton = styled(NavLink)`
-  display: inline-block;
-  padding: 10px 26px;
-  border-radius: 999px;
-  text-decoration: none;
-  background: #222;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: lowercase;
-  transition: background 0.2s ease, transform 0.1s ease;
-
-  &:hover {
-    background: #000;
-    transform: translateY(-1px);
-  }
-`;
-
-const HomeSideMenu = styled.aside`
-  display: flex;
-  align-items: flex-start;
-  margin-left: 24px;
-
-  @media (max-width: 1024px) {
-    margin-left: 0;
-  }
-`;
-
-const SideLine = styled.div`
-  width: 2px;
-  height: 100%;
-  background: #cccccc;
-  margin-right: 16px;
-
-  @media (max-width: 1024px) {
-    height: 80px;
-  }
-`;
-
-const SideInner = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const SideMenuList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li + li {
-    margin-top: 8px;
-  }
-`;
-
-const SideMenuLink = styled(NavLink)`
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 14px;
-  color: #666;
-  text-decoration: none;
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease;
-
-  &:hover {
-    background: #111;
-    color: #fff;
-  }
-
-  &.active {
-    background: #111;
-    color: #fff;
-    font-weight: 600;
-  }
-`;
-
-const SideEtc = styled.div`
-  margin-top: 40px;
-  font-size: 12px;
-  color: #555;
-
-  .githublogo a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .copyright {
-    margin-top: 8px;
-  }
-`;

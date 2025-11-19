@@ -1,7 +1,8 @@
+// src/pages/Project.jsx
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const sideMenu = [
+const MENU = [
   { path: "/", label: "Home" },
   { path: "/About", label: "About" },
   { path: "/Project", label: "Project" },
@@ -10,105 +11,84 @@ const sideMenu = [
 
 function Project() {
   return (
-    <Main>
-      <Left>
-        <img src="./img/jh.png" alt="img" />
-      </Left>
+    <div className="page">
+      <main className="layout">
+        <section className="layout-left">
+          <img src="/img/jh.png" alt="img" />
+        </section>
 
-      <Right>
-        <Section>
-          <div className="titleBox">
-            <span>Project</span>
-          </div>
-
-          <div className="button">
-            <button>All</button>
-          </div>
-
-          <div className="cards">
-            {/* 프로젝트 카드 */}
-          </div>
-        </Section>
-
-        <SideMenu>
-          <div className="line" />
-          <div className="inner">
-            <ul className="menuList">
-              {sideMenu.map((item) => (
-                <li key={item.path}>
-                  <MenuLink to={item.path} end={item.path === "/"}>
-                    {item.label}
-                  </MenuLink>
-                </li>
-              ))}
-            </ul>
-
-            <div className="etc">
-              <div className="githublogo">
-                <a
-                  href="https://github.com/Jung-ha-R"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-              </div>
-              <div className="copyright">Copyright © 2025</div>
+        <section className="layout-right">
+          <ProjectSection>
+            <div className="titleBox">
+              <span>PROJECT</span>
             </div>
-          </div>
-        </SideMenu>
-      </Right>
-    </Main>
+
+            <div className="button">
+              <button>All</button>
+            </div>
+
+            <div className="cards">
+              <div className="card">
+                <div className="thumb" />
+                <h3 className="card-title">넷플릭스 클론 코딩</h3>
+                <p className="card-desc">TMDB API를 사용한 영화/시리즈 소개 페이지</p>
+              </div>
+
+              <div className="card">
+                <div className="thumb" />
+                <h3 className="card-title">포트폴리오 사이트</h3>
+                <p className="card-desc">React + GitHub Pages로 배포한 개인 포트폴리오</p>
+              </div>
+
+              <div className="card">
+                <div className="thumb" />
+                <h3 className="card-title">Todo List</h3>
+                <p className="card-desc">기본 CRUD + 로컬스토리지 저장 기능</p>
+              </div>
+            </div>
+          </ProjectSection>
+
+          <aside className="side-menu">
+            <div className="side-line" />
+            <div className="side-links">
+              <ul className="menuList">
+                {MENU.map((item) => (
+                  <li key={item.path}>
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                      end={item.path === "/"}
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="etc">
+                <div className="githublogo">
+                  <a
+                    href="https://github.com/Jung-ha-R"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </div>
+                <div className="copyright">Copyright © 2025</div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
   );
 }
 
 export default Project;
 
 
-const Main = styled.main`
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
-  min-height: calc(100vh - 80px);
-  background: #f4f8fd;
-
-  max-width: 1280px;
-  margin: 0 auto;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-`;
-
-const Left = styled.div`
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-  }
-
-  @media (max-width: 1024px) {
-    img {
-      height: 280px;
-    }
-  }
-`;
-
-const Right = styled.div`
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) 200px;
-  padding: 40px 40px 80px;
-  box-sizing: border-box;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    padding: 24px 20px 40px;
-    row-gap: 24px;
-  }
-`;
-
-const Section = styled.section`
+const ProjectSection = styled.section`
   .titleBox {
     margin-bottom: 24px;
   }
@@ -148,77 +128,32 @@ const Section = styled.section`
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
   }
-`;
 
-const SideMenu = styled.aside`
-  display: flex;
-  align-items: flex-start;
-  margin-left: 24px;
-
-  .line {
-    width: 2px;
-    height: 100%;
-    background: #cccccc;
-    margin-right: 16px;
+  .card {
+    padding: 14px 14px 16px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.03);
   }
 
-  .inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .thumb {
+    width: 100%;
+    height: 140px;
+    border-radius: 8px;
+    background: #e5e7eb;
+    margin-bottom: 10px;
   }
 
-  .menuList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menuList li + li {
-    margin-top: 8px;
-  }
-
-  .etc {
-    margin-top: 40px;
-    font-size: 12px;
-    color: #555;
-  }
-
-  .githublogo a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .copyright {
-    margin-top: 8px;
-  }
-
-  @media (max-width: 1024px) {
-    margin-left: 0;
-
-    .line {
-      height: 80px;
-    }
-  }
-`;
-
-const MenuLink = styled(NavLink)`
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 14px;
-  color: #666;
-  text-decoration: none;
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease;
-
-  &:hover {
-    background: #111;
-    color: #fff;
-  }
-
-  &.active {
-    background: #111;
-    color: #fff;
+  .card-title {
+    font-size: 15px;
     font-weight: 600;
+    margin: 0 0 6px;
+  }
+
+  .card-desc {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
   }
 `;

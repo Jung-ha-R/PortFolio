@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const sideMenu = [
+const MENU = [
   { path: "/", label: "Home" },
   { path: "/About", label: "About" },
   { path: "/Project", label: "Project" },
@@ -10,137 +10,99 @@ const sideMenu = [
 
 function Contact() {
   return (
-    <Main>
-      <Left>
-        <img src="./img/jh.png" alt="contact" />
-      </Left>
+    <div className="page">
+      <main className="layout">
+        <section className="layout-left">
+          <img src="/img/jh.png" alt="contact" />
+        </section>
 
-      <Right>
-        <ContactSection>
-          <ContactBox>
-            <ThankTitle>감사합니다.</ThankTitle>
+        <section className="layout-right">
+          <ContactSection>
+            <ContactBox>
+              <ThankTitle>감사합니다.</ThankTitle>
 
-            <ContactCard>
-              <ContactHeader>
-                <ContactLabel>contact</ContactLabel>
-              </ContactHeader>
+              <ContactCard>
+                <ContactHeader>
+                  <ContactLabel>contact</ContactLabel>
+                </ContactHeader>
 
-              <ProfileRow>
-                <Avatar>HR</Avatar>
-                <div>
-                  <ProfileName>정하림</ProfileName>
-                  <ProfileDesc>프론트엔드 지망 개발자</ProfileDesc>
+                <ProfileRow>
+                  <Avatar>HR</Avatar>
+                  <div>
+                    <ProfileName>정하림</ProfileName>
+                    <ProfileDesc>프론트엔드 지망 개발자</ProfileDesc>
+                  </div>
+                </ProfileRow>
+
+                <InfoList>
+                  <InfoRow>
+                    <InfoIcon>📞</InfoIcon>
+                    <span>010-2369-5406</span>
+                  </InfoRow>
+                  <InfoRow>
+                    <InfoIcon>✉️</InfoIcon>
+                    <span>giner0426@gmail.com</span>
+                  </InfoRow>
+                </InfoList>
+
+                <LinkButtons>
+                  <LinkButton
+                    href="https://github.com/Jung-ha-R"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub 바로가기
+                  </LinkButton>
+                </LinkButtons>
+              </ContactCard>
+
+              <BottomText>끝까지 봐주셔서 감사합니다.</BottomText>
+              <BottomSubText>
+                사람들이 편하게 사용할 수 있는 서비스를 만드는 개발자가 되기 위해
+                계속해서 공부하겠습니다.
+              </BottomSubText>
+            </ContactBox>
+          </ContactSection>
+
+          {/* 오른쪽 세로 메뉴 – About / Project와 동일 구조 */}
+          <aside className="side-menu">
+            <div className="side-line" />
+            <div className="side-links">
+              <ul className="menuList">
+                {MENU.map((item) => (
+                  <li key={item.path}>
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                      end={item.path === "/"}
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+
+              <SideEtc>
+                <div className="githublogo">
+                  <a
+                    href="https://github.com/Jung-ha-R"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
                 </div>
-              </ProfileRow>
-
-              <InfoList>
-                <InfoRow>
-                  <InfoIcon>📞</InfoIcon>
-                  <span>010-2369-5406</span>
-                  {/* ↑ 여기 본인 번호로 교체 */}
-                </InfoRow>
-                <InfoRow>
-                  <InfoIcon>✉️</InfoIcon>
-                  <span>giner0426@gmail.com</span>
-                </InfoRow>
-              </InfoList>
-
-              <LinkButtons>
-                <LinkButton
-                  href="https://github.com/Jung-ha-R"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub 바로가기
-                </LinkButton>
-              </LinkButtons>
-            </ContactCard>
-
-            <BottomText>끝까지 봐주셔서 감사합니다.</BottomText>
-            <BottomSubText>
-              사람들이 편하게 사용할 수 있는 서비스를 만드는 개발자가 되기 위해
-              계속해서 공부하겠습니다.
-            </BottomSubText>
-          </ContactBox>
-        </ContactSection>
-
-        <SideMenu>
-          <SideLine />
-          <SideInner>
-            <SideMenuList>
-              {sideMenu.map((item) => (
-                <li key={item.path}>
-                  <SideMenuLink to={item.path} end={item.path === "/"}>
-                    {item.label}
-                  </SideMenuLink>
-                </li>
-              ))}
-            </SideMenuList>
-
-            <SideEtc>
-              <div className="githublogo">
-                <a
-                  href="https://github.com/Jung-ha-R"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-              </div>
-              <div className="copyright">Copyright © 2025</div>
-            </SideEtc>
-          </SideInner>
-        </SideMenu>
-      </Right>
-    </Main>
+                <div className="copyright">Copyright © 2025</div>
+              </SideEtc>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
   );
 }
 
 export default Contact;
-
-const Main = styled.main`
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
-  min-height: calc(100vh - 80px);
-  background: #f4f8fd;
-
-  max-width: 1280px;
-  margin: 0 auto;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-`;
-
-const Left = styled.div`
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-  }
-
-  @media (max-width: 1024px) {
-    img {
-      height: 280px;
-    }
-  }
-`;
-
-const Right = styled.div`
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) 200px;
-  padding: 40px 40px 80px;
-  box-sizing: border-box;
-  column-gap: 32px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    padding: 24px 20px 40px;
-    row-gap: 24px;
-  }
-`;
 
 const ContactSection = styled.section`
   display: flex;
@@ -275,63 +237,6 @@ const BottomText = styled.div`
 const BottomSubText = styled.div`
   font-size: 12px;
   color: #555;
-`;
-
-const SideMenu = styled.aside`
-  display: flex;
-  align-items: flex-start;
-
-  @media (max-width: 1024px) {
-    margin-top: 8px;
-  }
-`;
-
-const SideLine = styled.div`
-  width: 2px;
-  height: 100%;
-  background: #cccccc;
-  margin-right: 16px;
-
-  @media (max-width: 1024px) {
-    height: 80px;
-  }
-`;
-
-const SideInner = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const SideMenuList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li + li {
-    margin-top: 8px;
-  }
-`;
-
-const SideMenuLink = styled(NavLink)`
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 14px;
-  color: #666;
-  text-decoration: none;
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease;
-
-  &:hover {
-    background: #111;
-    color: #fff;
-  }
-
-  &.active {
-    background: #111;
-    color: #fff;
-    font-weight: 600;
-  }
 `;
 
 const SideEtc = styled.div`

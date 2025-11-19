@@ -46,13 +46,15 @@
 
 .page {
   background: #f4f8fd;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
   max-width: 1440px;
-  margin: 0 0 0 auto;
+  margin: 0;
   min-height: calc(100vh - 80px);
 }
 
@@ -146,7 +148,12 @@
 }
 
 @media (max-width: 1024px) {
+  .page {
+    justify-content: center;
+  }
+
   .layout {
+    max-width: 100%;
     grid-template-columns: 1fr;
   }
 

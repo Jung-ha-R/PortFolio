@@ -22,78 +22,88 @@ function Home() {
   }, []);
 
   return (
-    <Main>
-      <Left>
-        <img src="./img/jh.png" alt="home" />
-      </Left>
+    <Page>
+      <Main>
+        <Left>
+          <img src="/img/jh.png" alt="home" />
+        </Left>
 
-      <Right>
-        <HeroSection>
-          <HeroInner>
-            <Name>JUNG HARIM</Name>
-            <Line />
-            <HeroTitle>
-              Creative
-              <TextAniBox>
-                {words.map((word, i) => (
-                  <Word key={word} $active={i === index}>
-                    {word}
-                  </Word>
+        <Right>
+          <HeroSection>
+            <HeroInner>
+              <Name>JUNG HARIM</Name>
+              <Line />
+              <HeroTitle>
+                Creative
+                <TextAniBox>
+                  {words.map((word, i) => (
+                    <Word key={word} $active={i === index}>
+                      {word}
+                    </Word>
+                  ))}
+                </TextAniBox>
+              </HeroTitle>
+
+              <HeroButtonWrap>
+                <HeroButton to="/Project">project</HeroButton>
+              </HeroButtonWrap>
+            </HeroInner>
+          </HeroSection>
+
+          <HomeSideMenu>
+            <SideLine />
+            <SideInner>
+              <SideMenuList>
+                {sideMenu.map((item) => (
+                  <li key={item.path}>
+                    <SideMenuLink
+                      to={item.path}
+                      end={item.path === "/"}
+                    >
+                      {item.label}
+                    </SideMenuLink>
+                  </li>
                 ))}
-              </TextAniBox>
-            </HeroTitle>
+              </SideMenuList>
 
-            <HeroButtonWrap>
-              <HeroButton to="/Project">project</HeroButton>
-            </HeroButtonWrap>
-          </HeroInner>
-        </HeroSection>
-
-        <HomeSideMenu>
-          <SideLine />
-          <SideInner>
-            <SideMenuList>
-              {sideMenu.map((item) => (
-                <li key={item.path}>
-                  <SideMenuLink
-                    to={item.path}
-                    end={item.path === "/"}
+              <SideEtc>
+                <div className="githublogo">
+                  <a
+                    href="https://github.com/Jung-ha-R"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    {item.label}
-                  </SideMenuLink>
-                </li>
-              ))}
-            </SideMenuList>
-
-            <SideEtc>
-              <div className="githublogo">
-                <a
-                  href="https://github.com/Jung-ha-R"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-              </div>
-              <div className="copyright">Copyright © 2025</div>
-            </SideEtc>
-          </SideInner>
-        </HomeSideMenu>
-      </Right>
-    </Main>
+                    GitHub
+                  </a>
+                </div>
+                <div className="copyright">Copyright © 2025</div>
+              </SideEtc>
+            </SideInner>
+          </HomeSideMenu>
+        </Right>
+      </Main>
+    </Page>
   );
 }
 
 export default Home;
 
+const Page = styled.div`
+  background: #f4f8fd;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 1024px) {
+    justify-content: center; 
+  }
+`;
 const Main = styled.main`
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
-  min-height: calc(100vh - 80px); 
-  background: #f4f8fd;
-
+  min-height: calc(100vh - 80px);
   max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
@@ -165,7 +175,7 @@ const TextAniBox = styled.div`
   position: relative;
   overflow: hidden;
   height: 1.2em;
-  min-width: 110px; 
+  min-width: 110px;
 `;
 
 const Word = styled.div`
