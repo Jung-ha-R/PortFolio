@@ -1,9 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-import webpagePdf from "../assets/pdfs/webpage.pdf";
-import portfolioPdf from "../assets/pdfs/portfolio.pdf";
-import todoPdf from "../assets/pdfs/todo.pdf";
+const PDF_BASE_URL = `${import.meta.env.BASE_URL}pdfs/`;
 
 const SIDE_MENU = [
   { path: "/", label: "Home" },
@@ -17,19 +15,19 @@ const PROJECTS = [
     id: 1,
     title: "웹페이지",
     description: "CMS를 활용한 협업",
-    file: webpagePdf,
+    file: `${PDF_BASE_URL}webpage.pdf`,
   },
   {
     id: 2,
     title: "포트폴리오 사이트",
     description: "React + GitHub Pages로 배포한 개인 포트폴리오",
-    file: portfolioPdf,
+    file: `${PDF_BASE_URL}portfolio.pdf`,
   },
   {
     id: 3,
     title: "Todo List",
     description: "기본 CRUD + 로컬스토리지 저장 기능",
-    file: todoPdf,
+    file: `${PDF_BASE_URL}todo.pdf`,
   },
 ];
 
@@ -37,7 +35,10 @@ function Project() {
   return (
     <Main>
       <Left>
-        <img src="https://images.unsplash.com/photo-1763315152539-06fc234b526c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img" />
+        <img
+          src="https://images.unsplash.com/photo-1763315152539-06fc234b526c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="workspace"
+        />
       </Left>
 
       <Right>
@@ -299,4 +300,3 @@ const MenuLink = styled(NavLink)`
     font-weight: 600;
   }
 `;
-  
