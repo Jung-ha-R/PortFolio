@@ -173,7 +173,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
   min-height: calc(100vh - 80px);
   background: #f4f8fd;
 
-  max-width: 1280px;
+  max-width: 1980px;
   margin: 0 auto;
 
   @media (max-width: 1024px) {
