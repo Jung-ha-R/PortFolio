@@ -13,8 +13,8 @@ const SIDE_MENU = [
 const PROJECTS = [
   {
     id: 1,
-    title: "웹페이지",
-    description: "CMS를 활용한 협업",
+    title: "EXORIA",
+    description: "CMS를 활용한 텍스트 기반 RPG 웹 사이트 협업",
     file: `${PDF_BASE_URL}webpage.pdf`,
   },
   {
