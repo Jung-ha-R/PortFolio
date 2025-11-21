@@ -30,7 +30,7 @@ export default function About() {
               <li>2025 ~ 프론트엔드 개인 프로젝트 진행 중</li>
             </ul>
 
-            <h3 className="sub-title">- CERTIFICATE</h3>
+            <h3 className="sub-title">- SKILL</h3>
             <ul className="list">
               <li>추가 예정</li>
             </ul>
