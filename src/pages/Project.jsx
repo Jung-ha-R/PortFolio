@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const PDF_BASE_URL = `${import.meta.env.BASE_URL}pdfs/`;
+const IMAGE_BASE_URL = `${import.meta.env.BASE_URL}images/`;
 
 const SIDE_MENU = [
   { path: "/", label: "Home" },
@@ -16,18 +17,21 @@ const PROJECTS = [
     title: "EXORIA",
     description: "CMS를 활용한 텍스트 기반 RPG 웹 사이트 협업",
     file: `${PDF_BASE_URL}webpage.pdf`,
+    thumb: `${IMAGE_BASE_URL}exoria_thumb.png`,
   },
   {
     id: 2,
     title: "포트폴리오 사이트",
     description: "React + GitHub Pages로 배포한 개인 포트폴리오",
     file: `${PDF_BASE_URL}portfolio.pdf`,
+    thumb: `${IMAGE_BASE_URL}portfolio_thumb.png`,
   },
   {
     id: 3,
     title: "Todo List",
     description: "기본 CRUD + 로컬스토리지 저장 기능",
     file: `${PDF_BASE_URL}todo.pdf`,
+    thumb: `${IMAGE_BASE_URL}todo_thumb.png`,
   },
 ];
 
@@ -60,7 +64,10 @@ function Project() {
                 rel="noreferrer"
                 className="project-card"
               >
-                <div className="thumb" />
+                <div
+                  className="thumb"
+                  style={{ backgroundImage: `url(${p.thumb})` }}
+                />
                 <div className="info">
                   <h3>{p.title}</h3>
                   <p>{p.description}</p>
@@ -103,7 +110,6 @@ function Project() {
 }
 
 export default Project;
-
 
 const Main = styled.main`
   display: grid;
@@ -213,6 +219,9 @@ const ProjectSection = styled.section`
     border-radius: 8px;
     background: #e5e7eb;
     margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .info h3 {
