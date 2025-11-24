@@ -5,7 +5,7 @@ import cssLogo from "../assets/css.png";
 import jsLogo from "../assets/js.png";
 
 import reactLogo from "../assets/react.png";
-import stypedComponentsLogo from "../assets/styled-components.png";
+import stypedComponentsLogo from "../assets/styled-component.png";
 import tsLogo from "../assets/ts.png";
 import jqueryLogo from "../assets/jquery.png";
 import phpLogo from "../assets/php.png";
